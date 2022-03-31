@@ -3,10 +3,10 @@
 # API proxy Server/Backend
 
 
-* [] Get route to proxy API request
-* [] 404 handler
-* [] Error Handler
-* [] Delpoy
+* [ X ] Get route to proxy API request
+* [ X ] 404 handler
+* [ X ] Error Handler
+* [ X ] Delpoy
 
 
 # Front End

@@ -14,7 +14,7 @@ app.get('/videos', (req, res) => {
     fetch(url)
     .then(res=> res.json())
     .then(json => {
-        res.json(json)
+        res.json(json.items)
     })
 });
 
