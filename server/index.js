@@ -1,15 +1,21 @@
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
+const fetch = require('node-fetch')
+require('dotenv').config()
 
 const app = express();
 app.use(morgan('tiny'));
 app.use(cors());
-require('dotenv').config()
 
 
 app.get('/videos', (req, res) => {
-    res.json([])
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GOOGLE_API_KEY}&channelId=UClnFESYauq1pNqBVBbcxsXQ&part=snippet,id&order=date&maxResults=20`
+    fetch(url)
+    .then(res=> res.json())
+    .then(json => {
+        res.json(json)
+    })
 });
 
 
