@@ -1,13 +1,18 @@
 const API_URL = 'https://server-manuel-heav.vercel.app/videos'
 const videosElement = document.querySelector('#videos')
+const filterInput = document.querySelector('#filter')
+
+let allVideos = []
+filterInput.addEventListener('keyup', filterList)
 
 fetch(API_URL)
 .then(res => res.json())
 .then(videos => {
-    console.log(videos)
+    allVideos = videos
     videos.forEach((video) =>{
         
         const videoElement = document.createElement('div');
+        videoElement.dataset.id = video.id
 
         videoElement.className = 'card col-4';
         const img = document.createElement('img');
@@ -28,3 +33,21 @@ fetch(API_URL)
         videosElement.appendChild(videoElement)
     })
 })
+
+
+const filterList = (e) => {
+    const filter = e.target.value
+    console.log(filter)
+    console.log()
+    if(allVideos){
+        const regExp = new RegExp(filterInput.value, 'gi')
+        allVideos.forEach(video => {
+            if(video.snippet.title.match(regExp)){
+                console.log(video)
+            }else{
+
+            }
+        })    
+    }
+
+}
