@@ -6,6 +6,7 @@ fetch(API_URL)
 .then(videos => {
     console.log(videos)
     videos.forEach((video) =>{
+        
         const videoElement = document.createElement('div');
 
         videoElement.className = 'card col-4';
