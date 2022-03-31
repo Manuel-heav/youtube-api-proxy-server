@@ -15,6 +15,8 @@
 * [ X ] Add bootswatch
 * [ X ] Make a request to the API server
 * [ X ] Added results to frontend
+* [ X ] Make results filterable
+
 
 
 

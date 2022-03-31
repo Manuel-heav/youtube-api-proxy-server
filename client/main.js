@@ -3,7 +3,7 @@ const videosElement = document.querySelector('#videos')
 const filterInput = document.querySelector('#filter')
 
 let allVideos = []
-filterInput.addEventListener('keyup', filterList)
+filterInput.addEventListener('keydown', filterList)
 
 fetch(API_URL)
 .then(res => res.json())
@@ -38,14 +38,13 @@ fetch(API_URL)
 const filterList = (e) => {
     const filter = e.target.value
     console.log(filter)
-    console.log()
     if(allVideos){
         const regExp = new RegExp(filterInput.value, 'gi')
         allVideos.forEach(video => {
             if(video.snippet.title.match(regExp)){
-                console.log(video)
+                document.querySelector(`div[data-id=${video.id}]`).getElementsByClassName.display = ''
             }else{
-
+                document.querySelector(`div[data-id=${video.id}]`).getElementsByClassName.display = 'none'
             }
         })    
     }
