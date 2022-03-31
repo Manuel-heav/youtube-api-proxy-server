@@ -13,4 +13,6 @@
 
 
 * [ X ] Add bootswatch
+* [ X ] Make a request to the API server
+
 
